@@ -26,7 +26,9 @@ This tool is an application of the above to faces. This is (roughly) how it work
 
 ### Installation
 
-lorem ipsum
+Simply install via pip `pip install hybrid-face`.
+
+Should you have trouble with the `dlib` dependency during installation, simply run `pip install cmake dlib`.
 
 ### Using the CLI
 
