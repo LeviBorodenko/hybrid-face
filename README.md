@@ -24,6 +24,38 @@ This tool is an application of the above to faces. This is (roughly) how it work
 
 ## How do I use it?
 
+### Installation
+
+lorem ipsum
+
+### Using the CLI
+
+After installing the tool, you can use the `hybrid_face` command line interface to create your own hybrid faces
+
+``` bash
+usage: hybrid_face [-h] [--version] -n NEAR_IMAGE -f FAR_IMAGE [--emphasis {near,far,balanced}] [-o OUTPUT] [-s]
+
+Command-line tool for creating hybrid images
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -n NEAR_IMAGE, --near NEAR_IMAGE
+                        Path to the image that should be seen from anear
+  -f FAR_IMAGE, --far FAR_IMAGE
+                        Path to the image that should be seen from afar
+  --emphasis {near,far,balanced}
+                        Choose whether the near or far image should be emphasized
+  -o OUTPUT, --output OUTPUT
+                        Output file for the resulting image (e.g. "result.png")
+  -s, --show            Set this flag if you want to display the image (and not necessarily save it)
+
+```
+
+That is, if you have an image `gauss.png` and `fourier.png` and you want to display the hybrid image, you simply run `hybrid-face --near gauss.png --far fourier.png --show`.
+
+![cli-demo](cli-demo.png)
+
 ### Setting up the project
 
 Navigate into your fork and do the remaining setup.
@@ -55,11 +87,7 @@ pre-commit autoupdate
 pre-commit run --all-files
 ```
 
-Don't forget to tell your contributors to also install and use pre-commit.
-
 Note: pre-commit hooks run on git commits and if they fix or make you fix some file, then you'll have to commit again.
-
-After this, you should go through all config files and folder names and set them up to your liking, e.g. remove `sst-python-boilerplate` and substitute it with your new package name.
 
 pre-commit: <http://pre-commit.com/>
 
