@@ -30,10 +30,10 @@ lorem ipsum
 
 ### Using the CLI
 
-After installing the tool, you can use the `hybrid_face` command line interface to create your own hybrid faces
+After installing the tool, you can use the `hybrid-face` command line interface to create your own hybrid faces
 
 ```
-usage: hybrid_face [-h] [--version] -n NEAR_IMAGE -f FAR_IMAGE [--emphasis {near,far,balanced}] [-o OUTPUT] [-s]
+usage: hybrid-face [-h] [--version] -n NEAR_IMAGE -f FAR_IMAGE [--emphasis {near,far,balanced}] [-o OUTPUT] [-s]
 
 Command-line tool for creating hybrid images
 
