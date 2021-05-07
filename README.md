@@ -14,9 +14,9 @@ This tool is an application of the above to faces. This is (roughly) how it work
 
 1. First we need to understand the concept of the [Fourier Transform](https://www.academia.edu/download/44001876/34957138.pdf) applied to images.
 
-    1.1 Simple (but not easy) explanation: We interpret an image as a [tempered distribution](https://en.wikipedia.org/wiki/Distribution_(mathematics)#Tempered_distributions_and_Fourier_transform) obtained as the sum of [delta distributions](https://en.wikipedia.org/wiki/Dirac_delta_function) shifted by pixel location and multiplied by greyscale value. The Fourier transform of that image is then simply the [Fourier transform](https://en.wikipedia.org/wiki/Fourier_transform) of the aforementioned distribution. Well, technical the [periodically extension](https://www.math.ubc.ca/~feldman/m267/fsExt.pdf) of it.
+    1.1 Nice (but not easy) explanation: We interpret an image as a [tempered distribution](https://en.wikipedia.org/wiki/Distribution_(mathematics)#Tempered_distributions_and_Fourier_transform) obtained as the sum of [delta distributions](https://en.wikipedia.org/wiki/Dirac_delta_function) shifted by pixel location and multiplied by greyscale value. The Fourier transform of that image is then simply the [Fourier transform](https://en.wikipedia.org/wiki/Fourier_transform) of the aforementioned distribution. Well, technical the [periodically extension](https://www.math.ubc.ca/~feldman/m267/fsExt.pdf) of it.
 
-    1.2 Easy (but not simple) explanation: The Fourier transform of a sound sample gives you the audio frequencies contained in that sample. Similarly, the Fourier transform of an image give you the spatial frequencies that make up that image. A spatial frequency can be interpreted as a periodic wave (i.e. sinusoidal) pattern such that adding up all these waves returns back the (greyscale) image. In particular, high spatial frequencies correspond to rapidly oscillating waves and low spatial frequencies are slowly oscillating waves.
+    1.2 Easy (but not nice) explanation: The Fourier transform of a sound sample gives you the audio frequencies contained in that sample. Similarly, the Fourier transform of an image gives you the spatial frequencies that make up that image. A spatial frequency can be interpreted as a periodic wave (i.e. sinusoidal) pattern such that adding up all these waves returns back the (greyscale) image. In particular, high spatial frequencies correspond to rapidly oscillating waves and low spatial frequencies are slowly oscillating waves.
 
 2. It is a [curious observation](https://www.sciencedirect.com/science/article/abs/pii/S0010028597906678) that the human visual system is able to prioritize information coming from particular spatial frequency bands for object or scene recognition. This is precisely what we use in this application. We utilise that fact that from up close, we prioritize high spatial frequencies for object recognition and from further away, we prioritize lower spatial frequencies. Read [here](https://stanford.edu/class/ee367/reading/OlivaTorralb_Hybrid_Siggraph06.pdf) for more details.
 
@@ -58,6 +58,8 @@ That is, if you have an image `gauss.png` and `fourier.png` and you want to disp
 
 ![cli-demo](cli-demo.png)
 
+## Development
+
 ### Setting up the project
 
 Navigate into your fork and do the remaining setup.
@@ -93,7 +95,7 @@ Note: pre-commit hooks run on git commits and if they fix or make you fix some f
 
 pre-commit: <http://pre-commit.com/>
 
-## Installing dependencies
+### Installing dependencies
 
 Dependencies are categorized and managed using `setup.cfg`.
 
@@ -107,3 +109,8 @@ pip install -e .[testing]
 # to further install dev dependencies like pre-commit, black, flake8 run
 pip install -e .[dev]
 ```
+
+### Adding features
+
+Collaboration is always welcome. Feel free to submit a PR! Make sure to cover your code in tests :)
+
